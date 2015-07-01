@@ -3,7 +3,7 @@ package Pod::Weaver::Plugin::Encoding;
 
 use Moose;
 use Moose::Autobox;
-use List::AllUtils 'any';
+use List::Util 1.33 'any';
 use MooseX::Types::Moose qw(Str);
 use aliased 'Pod::Elemental::Node';
 use aliased 'Pod::Elemental::Element::Pod5::Command';
