@@ -4,13 +4,12 @@ use warnings;
 use Test::More 0.88;
 use Test::Differences;
 
-use FindBin;
 use PPI;
 use Pod::Weaver;
 use Pod::Elemental;
 
 my $weaver = Pod::Weaver->new_from_config({
-    root => $FindBin::Bin,
+    root => 'corpus',
 });
 
 # add configured encoding if not there yet
