@@ -2,7 +2,6 @@ package Pod::Weaver::Plugin::Encoding;
 # ABSTRACT: Add an encoding command to your POD
 
 use Moose;
-use Moose::Autobox;
 use List::Util 1.33 'any';
 use MooseX::Types::Moose qw(Str);
 use aliased 'Pod::Elemental::Node';
@@ -57,21 +56,19 @@ sub finalize_document {
 
     return if find_encoding_command($document->children);
 
-    $document->children->unshift(
+    unshift @{ $document->children },
         Command->new({
             command => 'encoding',
             content => $self->encoding,
         }),
-    );
 }
 
 sub find_encoding_command {
     my ($children) = @_;
-    return $children->grep(sub {
-        return 1 if $_->isa(Command) && $_->command eq 'encoding';
-        return 0 unless $_->does(Node);
-        return find_encoding_command($_->children);
-    })->length;
+    return any {
+        ($_->isa(Command) && $_->command eq 'encoding')
+        || ($_->does(Node) && find_encoding_command($_->children));
+    } @$children;
 }
 
 =head1 SEE ALSO
