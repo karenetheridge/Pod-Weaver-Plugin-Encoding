@@ -1,7 +1,7 @@
 package Pod::Weaver::Plugin::Encoding;
 # ABSTRACT: (DEPRECATED) Add an encoding command to your POD
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use Moose;
 use List::Util 1.33 'any';
