@@ -1,6 +1,6 @@
 Revision history for Pod-Weaver-Plugin-Encoding
 
-{{ $NEXT }}
+0.03      2015-07-02 01:12:26Z
  - eliminate dependency on List::AllUtils
  - fix recursive searching inside subnodes
  - eliminate dependency on Moose::Autobox
