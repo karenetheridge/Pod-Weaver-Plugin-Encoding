@@ -1,4 +1,6 @@
-.*
-!.gitignore
-Pod-Weaver-Plugin-Encoding-*
-Debian_CPANTS.txt
+/.ackrc
+/.build/
+!/.gitignore
+/.latest
+/Pod-Weaver-Plugin-Encoding-*/
+/Pod-Weaver-Plugin-Encoding-*.tar.gz
