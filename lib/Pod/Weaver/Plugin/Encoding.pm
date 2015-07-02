@@ -1,5 +1,5 @@
 package Pod::Weaver::Plugin::Encoding;
-# ABSTRACT: Add an encoding command to your POD
+# ABSTRACT: (DEPRECATED) Add an encoding command to your POD
 
 our $VERSION = '0.03';
 
@@ -78,6 +78,11 @@ sub find_encoding_command {
 L<Pod::Weaver::Section::Encoding> is very similar to this module, but
 expects the encoding to be specified in a special comment within the
 document that's being woven.
+
+L<Pod::Weaver::Plugin::SingleEncoding> can be considered the successor to this
+module, and is a core part of L<Pod::Weaver> version 4. It is contained within
+L<[@Default]|Pod::Weaver::PluginBundle::Default>, and you should be using
+that plugin rather than this one.
 
 =cut
 
