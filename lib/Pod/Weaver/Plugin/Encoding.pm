@@ -1,6 +1,8 @@
 package Pod::Weaver::Plugin::Encoding;
 # ABSTRACT: Add an encoding command to your POD
 
+our $VERSION = '0.03';
+
 use Moose;
 use List::Util 1.33 'any';
 use MooseX::Types::Moose qw(Str);
