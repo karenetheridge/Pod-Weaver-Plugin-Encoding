@@ -70,7 +70,7 @@ sub find_encoding_command {
     return $children->grep(sub {
         return 1 if $_->isa(Command) && $_->command eq 'encoding';
         return 0 unless $_->does(Node);
-        return any { find_encoding_command($_->children) };
+        return find_encoding_command($_->children);
     })->length;
 }
 
